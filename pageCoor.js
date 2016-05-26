@@ -64,7 +64,7 @@ var myTitles = [''];
 
 // History PopState Event Listener
 window.addEventListener('popstate', function(e) {
-    // e.state is equal to the data-attribute of the last image we clicked
+    // e.state is equal to the key : value pairs passed in
     var character = e.state;
     
     if(!character){
