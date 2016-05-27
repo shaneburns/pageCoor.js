@@ -3,7 +3,23 @@
         * Will change url according to string given(and other options)
         
         ** Plugin Status: 	Being Developed
-	** Version :		Pre-Alpha 0.0.0
+	    ** Version :		Pre-Alpha 0.0.0
+*/
+
+/*
+    Page Coor. Options List -
+
+        *title (string)
+                - default: 'Default'
+                - desc:    the page's title
+
+        *currDir (string)
+                - default: null
+                - desc:    url to append
+
+        *extras (string)
+                - default: null
+                - desc:    any get values that should be attached to the currDir
 */
 
 (function($){
@@ -70,18 +86,22 @@ window.addEventListener('popstate', function(e) {
     if(!character){
 	// Default Home page
         $currDir = 'index.html';
+        
+        // Uncomment Next line to integrate Operator.IO
         //$('body').operatorio({ url:'includes/contentLinked.php?page=welcome', shell: [true,{},'newest'] });
         
-        //shlSwitch();
+        //shlSwitch();  // Uncomment to integrate Shell FW
         
         $('title').html('Home - Default');
         
     }else{
 	// Designated page
         $currDir = character.currDir;
+        
+        // Uncomment Next line to integrate Operator.IO
         //$('body').operatorio({ url:'includes/contentLinked.php' + character.currDir, shell: [true,{},'newest'] });
         
-        //shlSwitch();
+        //shlSwitch();  // Uncomment to integrate Shell FW
         
         $('title').html(character.title);
     }
